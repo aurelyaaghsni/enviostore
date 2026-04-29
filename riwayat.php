@@ -101,6 +101,10 @@ $summary = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt2));
                 <input type="date" name="sampai" class="form-control" value="<?= $sampai ?>">
                 <button type="submit" class="btn btn-pink">Cari</button>
                 <a href="riwayat.php" class="btn btn-outline">Reset</a>
+                <a href="export_pdf.php?dari=<?= $dari ?>&sampai=<?= $sampai ?>"
+   class="btn btn-pink" target="_blank">
+    📄 Export PDF
+</a>
             </form>
 
             <!-- Tabel -->

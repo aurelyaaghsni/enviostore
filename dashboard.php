@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once 'includes/header.php';
+// Tampilkan pesan error kalau kasir coba akses halaman admin
+$akses_error = isset($_GET['error']) && $_GET['error'] === 'akses_ditolak';
 require_once 'config/db.php';
 
 // Ambil data statistik
@@ -40,6 +42,12 @@ $recent = mysqli_query($conn, "
                 🎀 <?= date('l, d F Y') ?>
             </div>
         </div>
+
+        <?php if ($akses_error): ?>
+        <div class="alert-error" style="margin-bottom:1.5rem;">
+        ✦ Akses ditolak — halaman tersebut hanya untuk Admin
+     </div>
+<?php endif; ?>
 
         <!-- Stat Cards -->
         <div class="stats-grid">

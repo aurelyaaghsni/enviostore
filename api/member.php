@@ -16,7 +16,7 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
 if ($row = mysqli_fetch_assoc($result)) {
-    // Hitung diskon berdasarkan poin
+    // ini tuh buat hitung diskon berdasarkan poin
     $poin = $row['total_poin'];
     if ($poin >= 1000)     $diskon = 15;
     elseif ($poin >= 500)  $diskon = 10;

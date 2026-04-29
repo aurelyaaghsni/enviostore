@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'includes/header.php';
+adminOnly(); // Hanya admin yang boleh akses
 require_once 'config/db.php';
 
 $success = '';

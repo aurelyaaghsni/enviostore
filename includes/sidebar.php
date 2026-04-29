@@ -34,11 +34,6 @@
             </a>
         </li>
         <li>
-            <a href="member.php" class="<?= basename($_SERVER['PHP_SELF']) == 'member.php' ? 'active' : '' ?>">
-                <span class="menu-icon">◈</span> Member
-            </a>
-        </li>
-        <li>
             <a href="transaksi.php" class="<?= basename($_SERVER['PHP_SELF']) == 'transaksi.php' ? 'active' : '' ?>">
                 <span class="menu-icon">◈</span> Transaksi
             </a>
@@ -46,6 +41,20 @@
         <li>
             <a href="riwayat.php" class="<?= basename($_SERVER['PHP_SELF']) == 'riwayat.php' ? 'active' : '' ?>">
                 <span class="menu-icon">◈</span> Riwayat
+            </a>
+        </li>
+
+        <?php if ($_SESSION['role'] === 'admin'): ?>
+        <li>
+            <a href="member.php" class="<?= basename($_SERVER['PHP_SELF']) == 'member.php' ? 'active' : '' ?>">
+                <span class="menu-icon">◈</span> Member
+            </a>
+        </li>
+        <?php endif; ?>
+
+        <li>
+            <a href="profil.php" class="<?= basename($_SERVER['PHP_SELF']) == 'profil.php' ? 'active' : '' ?>">
+                <span class="menu-icon">◈</span> Profil & Password
             </a>
         </li>
     </ul>
